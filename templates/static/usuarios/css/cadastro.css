@@ -1,0 +1,8 @@
+body {
+    background-image: url('/static/geral/img/cadastro.png');
+    background-size: cover;
+}
+
+p {
+    color: var(--light-color);
+}

@@ -1,0 +1,60 @@
+:root {
+    --main-color: #11435F;
+    --dark-color: #0C121C;
+    --light-color: #6DE6EE;
+    --contrast-color: #f4c96b;
+    --differential-color: #353535;
+}
+
+* {
+    color: black
+}
+
+.font-destaque {
+    color: var(--light-color);
+    font-size: 40px;
+}
+
+.input-default {
+    background-color: #D9D9D9;
+    color: white;
+    /* border: 1px solid var(--differential-color); */
+    
+}
+
+.input-default:focus{
+    background: #D9D9D9 ;
+}
+
+label{
+    color: #969696;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.btn-default {
+    background-color: var(--main-color);
+    color: white;
+    padding: 5px;
+    border: none;
+}
+
+.font-destaque-secundaria {
+    color: var(--light-color);
+    font-size: 35px;
+}
+
+.logo_analises{
+    margin-top: 45%;
+    margin-left: 35px;
+}
+
+.line {
+    border: none;
+    border-top: 1px solid #5e5e5e; 
+    margin: 10px 0;
+}
+
+

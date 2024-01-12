@@ -1,0 +1,61 @@
+{% extends "bases/base.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link href="{% static 'usuarios/css/login.css' %}" rel="stylesheet">
+{% endblock 'head' %}
+
+{% block 'conteudo' %}
+
+<div class="container">
+    {% if messages %}
+    <br>
+    {% for message in messages %}
+    <div class="alert {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="container">
+        <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+       
+            <div class="row">
+                <div class="col-6">
+                    <div class="box_login ">
+                        <div class="titulo_login">
+                            <img src="{% static 'geral/img/assistencia-medica 1.svg' %}" alt="icone medico" class="icone_login">
+                            <h3>Login</h3>
+                        </div>
+                        <div class="box_son d-grid gap-2 col-8 text-center mx-auto ">
+                            <div class="input-group">
+                                <span> <img src="{% static 'geral/img/user.svg' %}" alt="icon user"></span>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control input-default " id="floatingInput"
+                                        placeholder="" name="username">
+                                    <label for="floatingInput">Username</label>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <span> <img src="{% static 'geral/img/password.svg' %}" alt="icon password"></span>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control input-default" id="floatingPassword"
+                                        placeholder="" name="senha">
+                                    <label for="floatingPassword">Senha</label>
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <hr class="line"></hr>
+                                <input class="btn-default" type="submit" value="Login">
+                                <p><a href="#">Esqueceu a senha?</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col">
+                    <div class="logo_analises img-fluid"><img src="{% static 'geral/img/logo_analises.png' %}" alt="" height="170" width="401"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
