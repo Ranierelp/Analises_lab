@@ -6,14 +6,8 @@
 {% endblock 'head' %}
 
 {% block 'conteudo' %}
-
+  
 <div class="container">
-    {% if messages %}
-    <br>
-    {% for message in messages %}
-    <div class="alert {{ message.tags }}">{{ message }}</div>
-    {% endfor %}
-    {% endif %}
 
     <div class="container">
         <form action="{% url 'login' %}" method="POST">{% csrf_token %}
@@ -25,19 +19,20 @@
                             <img src="{% static 'geral/img/assistencia-medica 1.svg' %}" alt="icone medico" class="icone_login">
                             <h3>Login</h3>
                         </div>
+                        <br>
                         <div class="box_son d-grid gap-2 col-8 text-center mx-auto ">
                             <div class="input-group">
                                 <span> <img src="{% static 'geral/img/user.svg' %}" alt="icon user"></span>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control input-default " id="floatingInput"
-                                        placeholder="" name="username">
-                                    <label for="floatingInput">Username</label>
+                                    <input type="text" class="form-control input-default" id="floatingInput" required
+                                        placeholder="" name="email">
+                                    <label for="floatingInput">Email</label>
                                 </div>
                             </div>
                             <div class="input-group">
                                 <span> <img src="{% static 'geral/img/password.svg' %}" alt="icon password"></span>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control input-default" id="floatingPassword"
+                                    <input type="password" class="form-control input-default" id="floatingPassword" requireds
                                         placeholder="" name="senha">
                                     <label for="floatingPassword">Senha</label>
                                 </div>

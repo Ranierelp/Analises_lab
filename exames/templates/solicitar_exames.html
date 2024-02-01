@@ -43,9 +43,9 @@
                     <label>Total: </label><label class="previa-preco">R$ {{preco_total}}</label>
                 </div>
                 <br>
-                <h5>Data: 08 de Setembro</h5>
+                <h5 id="dataAtual"></h5>
                 <br>
-                <form action="" method="POST">
+                <form action="{% url 'fechar_pedido' %}" method="POST"> {% csrf_token  %}
                     {% for exame in solicitacao_exames %}
                         <input type="hidden" value="{{exame.id}}" name="exames">
                     {% endfor %}    
@@ -58,4 +58,18 @@
         </div>
     </div>
 </div>
+<script>
+    var meses = [
+        'Janeiro', 'Fevereiro', 'Março', 'Abril',
+        'Maio', 'Junho', 'Julho', 'Agosto',
+        'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+    ];
+
+    var dataAtual = new Date();
+    var dia = dataAtual.getDate();
+    var mes = meses[dataAtual.getMonth()];
+    var formatoData = 'Data: ' + dia + ' de ' + mes;
+
+    document.getElementById('dataAtual').innerHTML = formatoData;
+</script>
 {% endblock 'conteudo' %}
